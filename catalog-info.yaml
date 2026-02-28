@@ -1,0 +1,26 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: voltron-quarkus-8f 
+  description: Secure Supply Chain Example for Quarkus Java example with advanced continuous integration pipeline covering building, CVE scanning, security scanning, signatures, attestations, SLSA provenance and SBOM along with Gitops-based continuous deployment.   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+    - url: "https://devspaces.apps.salamander.aimlworkbench.com/#https://github.com/deanpeterson/voltron-quarkus-8f"
+      title: "Open in Dev Spaces"
+      icon: catalog
+      type: devspaces
+  annotations:
+    # ArgoCD apps from this template used tssc-gitops as the grouping
+    argocd/app-selector: tssc/gitops=voltron-quarkus-8f
+    backstage.io/kubernetes-id: voltron-quarkus-8f 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: voltron-quarkus-8f
+    quay.io/repository-slug: rhdh/voltron-quarkus-8f
+  tags: ["java", "quarkus", "sscs", "sbom", "acs"] 
+spec:
+  type: service
+  owner: user:default/deanpeterson 
+  lifecycle: experimental
